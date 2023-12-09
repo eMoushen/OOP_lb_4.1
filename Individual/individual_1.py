@@ -4,36 +4,36 @@
 
 class MyPair:
 
-    def __init__(self, first=0.0, second=0.0):
-        first = float(first)
-        second = float(second)
+    def __init__(self, value1=0.0, value2=0.0):
+        value1 = float(value1)
+        value2 = float(value2)
 
-        self.__first = first
-        self.__second = second
-
-    @property
-    def first(self):
-        return self.__first
+        self.__value1 = value1
+        self.__value2 = value2
 
     @property
-    def second(self):
-        return self.__second
+    def value1(self):
+        return self.__value1
+
+    @property
+    def value2(self):
+        return self.__value2
 
     # Прочитать значение
     def read(self):
-        self.__first = float(input("Введите значение для первого поля (дробное число): "))
-        self.__second = float(input("Введите значение для второго поля (положительное дробное число): "))
-        if self.__second <= 0:
+        self.__value1 = float(input("Введите значение для первого поля (дробное число): "))
+        self.__value2 = float(input("Введите значение для второго поля (положительное дробное число): "))
+        if self.__value2 <= 0:
             raise ValueError("Значение второго поля должно быть положительным дробным числом")
 
     # Вывести на экран
     def display(self):
-        print(f"First: {self.__first}, Second: {self.__second}")
+        print(f"Value1: {self.__value1}, Value2: {self.__value2}")
 
     # Умножение на произвольное дробное число
     def multiply(self, factor):
-        self.__first *= factor
-        self.__second *= factor
+        self.__value1 *= factor
+        self.__value2 *= factor
 
 
 def make_pair(first, second):
